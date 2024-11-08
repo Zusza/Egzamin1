@@ -8,12 +8,12 @@
     <link rel="icon" href="logo.png">
     <script>
         function Form() {
-            const firstName = document.getElementById("firstname").value.toUpperCase();
-            const lastName = document.getElementById("lastname").value.toUpperCase();
-            const message = document.getElementById("message").value;
-            const terms = document.getElementById("terms").checked;
+            let firstName = document.getElementById("firstname").value.toUpperCase();
+            let lastName = document.getElementById("lastname").value.toUpperCase();
+            let message = document.getElementById("message").value;
+            let terms = document.getElementById("terms").checked;
 
-            const result = document.getElementById("result");
+            let result = document.getElementById("result");
             result.innerHTML = "";
 
             if(!terms){
