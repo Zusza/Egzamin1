@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firma IT</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.png">
+    <script>
+        function Form() {
+            const firstName = document.getElementById("firstname").value.toUpperCase();
+            const lastName = document.getElementById("lastname").value.toUpperCase();
+            const message = document.getElementById("message").value;
+            const terms = document.getElementById("terms").checked;
+
+            const result = document.getElementById("result");
+            result.innerHTML = "";
+
+            if(!terms){
+                result.innerHTML = "<p style='color:red;'>Musisz zapoznać się z regulaminem</p>";
+            } 
+            else{
+                result.innerHTML = `<p style='color:navy;'>${firstName} ${lastName}<br>Treść twojej sprawy: ${message}</p>`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <section id="container">
+        <section id="header">
+            <div id="logo">
+                <img src="logo.png" alt="firma it">
+            </div>
+            <div id="menu">
+                <a href="index.html">Strona Główna</a>
+                <a href="uslugi.html">Usługi</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+        </section>
+        <section id="banner">
+            <img src="animacja.gif">
+        </section>
+        <section id="main">
+            <h2>Kontakt</h2>
+            <table>
+                <tr><td>Imię:</td><td><input type="text" id="firstname"></td></tr>
+                <tr><td>Nazwisko:</td><td><input type="text" id="lastname"></td></tr>
+                <tr><td>E-mail:</td><td><input type="email" id="email"></td></tr>
+                <tr><td>Zgłoszenie:</td><td><textarea id="message"></textarea></td></tr>
+                <tr><td colspan="2"><input type="checkbox" id="terms"> Zapoznałem się z regulaminem</td></tr>
+                <tr><td><button type="button" onclick="Form()">Prześlij</button></td><td><button type="reset">Reset</button></td></tr>
+            </table>
+            <hr>
+            <div id="result"></div>
+        </section>
+        <footer id="footer">
+            <p>Autor strony: <strong>00000000000</strong></p>
+        </footer>
+    </section>
+</body>
+</html>
